@@ -14,6 +14,11 @@ abstract class PostApiService extends ChopperService {
 
   static PostApiService create() {
     final client =
-        ChopperClient(baseUrl: 'https://jsonplaceholder.typicode.com');
+        ChopperClient(baseUrl: 'https://jsonplaceholder.typicode.com',services: [_$PostApiService()],
+    converter:JsonConverter(),
+
+        );
+    return _$PostApiService(client);
+
   }
 }
